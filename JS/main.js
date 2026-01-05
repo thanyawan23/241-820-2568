@@ -1,142 +1,172 @@
 /*
-//String, Number, Boolean, Object, Array
-
-
-//1. String
-let firstName = "John Doe";
-const idcard = '123';
-//2. Number
-let age = 30;
-let height = 5.9;
-
-//3. Boolean
-let isStudent = false;
-
-//การต่อสตริงใช้ , หรือ +
-firstName = "test";
-
-console.log("My name is", firstName, 'and I am', age, 'years old.');
-
-/*
-+ บวก
-- ลบ
-* คูณ
-/ หาร
-% หารเอาเศษ mod
+arr
 */
 
 /*
-let number1 = 'test';
-let number2 = 'xxx';
+let a = 10
+let b = 20 
+let c = 30
+console.log('a:',a,'b:',b,'c:',c)
 
-let result = number1 + number2; //การบวกสตริงจะเป็นการต่อสตริง
-console.log("ผลบวก =", result);
-*/
+let ages = [10,20,30] //มี array 3 items
+console.log('ages:',ages)
+console.log('ages[1]:',ages[1]) 
 
-/*Conditional Statement
-//if, else if, else
-//==, ===, !=, !==, >, <, >=, <=
-//&&, ||,!
-/*
-
-/*
-== เท่ากับ
-+= ไม่เท่ากับ
-> มากกว่า
-< น้อยกว่า
->= มากกว่าหรือเท่ากับ
-<= น้อยกว่าหรือเท่ากับ
-*/
-
-/*
-let number1 = 10;
-let number2 = 20;
-
-let condition1 = number1 != number2; //Boolean ค่า true หรือ false
-console.log("result of condition is:", condition1);
+//1. แทนที่ค่าข้อมูลใน array
+ages = [15,25]
+console.log('ages list:',ages)
+//2. เพิ่มค่าข้อมูลใน array
+ages.push(35)
+console.log('ages after push:',ages)
+//3. ลบค่าข้อมูลตัวสุดท้ายใน array
+ages.pop()
+console.log('ages after pop:',ages)
 */
 
 /*
-let number1 = 25;
-let number2 = 25;
-
-//if - else conditional statement
-if (number1 != number2) {
-   console.log("this if");
-} else if (number1 == number2) {
-   console.log("this else if");
-} else {
-    console.log("this else");
+let ages = [25,30,35,40,45]
+if(ages.includes(30)){  //ture
+    console.log('Age 30 is found in the array')
 }
 */
 
 /*
-Grade
->= 80 A
->= 70 B
->= 60 C
->= 50 D
-< 50 F
-*/
+let ages = [25,30,35,40,45]
+console.log('Ages : ',ages)
+let fruits = ['apple','banana','cherry']
+console.log('Fruits : ',fruits)
+fruits.push('mango')
+console.log('Fruits after push : ',fruits)
+console.log('First fruit : ',fruits.length) //นับจำนวนข้อมูลใน array
 
-/*
-let score = prompt("ป้อนคะแนนของคุณ")
-console.log("คะแนนของคุณคือ", score);
-
-if (score >= 80) { //false
-    console.log("เกรด A")
-} else if (score >= 70) { //false
-    console.log("เกรด B")
-}    else if (score >= 60) { //false
-    console.log("เกรด C")
-}       else if (score >= 50) { //false
-    console.log("เกรด D")
-} else { 
-    console.log("เกรด F")
-}
-*/
-   
-/*
-&& และ
-|| หรือ
-! ไม่
-*/
-
-/*
-let number1 = 5
-let number2 = 8
-// true && false
-let condition = !(number1 >= 3 || number2 >= 10);
-console.log("condition:", condition);
-
-
-let age = 30;
-let gender = 'ชาย';
-
-if (age >=18 && gender == 'ชาย') {
-    console.log("ผู้ชายที่มีอายุ 20 ปีขึ้นไป");
+for(let i=0;i<fruits.length;i++){ //วนลูปแสดงค่าข้อมูลใน array
+    console.log(`Fruit at index ${i}:`,fruits[i])
 }
 */
 
 /*
-let  number = 20
-if (number % 2 != 0){
-    console.log("เป็นเลขคู่");
-} 
+let student = [{ 
+    age: 30,
+    name: 'John',
+    grade: 'A'
+},{  
+    age: 25,
+    name: 'Jane',
+    grade: 'B'
+}]
+for(let i=0;i<student.length;i++){
+    console.log('Student '+ (i+1) + ":")
+    console.log(student[i])
+    console.log('name:',student[i].name);
+    console.log('age:',student[i].age);
+    console.log('grade:',student[i].grade);
+}
+student.push({ 
+    age: 28,
+    name: 'Mike',
+    grade: 'A'
+});
+console.log('Added new student:',student[student.length-1]); //แสดงข้อมูลคนสุดท้าย
+
+student.pop(); //ลบข้อมูลคนสุดท้าย
+console.log('Removed last student. Current students:',student);
 */
 
-/* loop statement
-while
-for
+//function
+
+/*
+score1 = 10
+score2 = 80
+
+function calculation_grade(score){
+    if(score >= 80){
+        grade = 'A'
+    }else if(score >= 70){
+        grade = 'B'
+    }else if(score >= 60){
+        grade = 'C'
+    }else if(score >= 50){
+        grade = 'D'
+    }else{
+        grade = 'F'
+    }
+    return grade
+}
+//เรียกใช้ฟังก์ชัน calculation_grade เพื่อหาค่าเกรดจากคะแนนที่กำหนด
+let grade1 = calculation_grade(score1)
+let grade2 = calculation_grade(score2)
+console.log('Score1:',score1,'Grade1:',grade1)
+console.log('Score2:',score2,'Grade2:',grade2)
 */
 
-let counter = -5;
-while(counter < 10){
-    console.log("Hello World");
-    //counter = counter + 1;
-    counter += 1;
+/*
+array
+*/
+
+/*
+let scores = [90,80,70,60,50]
+
+for(let i=0;i<scores.length;i++){
+    console.log(`Score ${i+1}: ${scores[i]}`);
+}   
+
+scores = scores.map((s) => {     //map,filter
+    return s - 10;
+})
+
+scores.forEach((s) => {
+    console.log('Score:',s);    //console.log(`Score: ${s}`);
+})
+*/
+
+/*
+let scores = [90,80,70,60,50]
+
+for(let i=0;i<scores.length;i++){
+    console.log(scores[i]);
+    //if(scores[i] >= 60){
+    //    newScores.push(scores[i])
+    //}
 }
 
-for(let i = 0; i < 10; i++){
-    console.log("Hello for from for loop");
-}
+let newScores = scores.filter(function(score) {
+    return score >= 70;
+})
+
+newScores.forEach((ns) => {
+console.log('new Score:' + ns);
+})
+*/
+
+// object functions
+
+let students = [
+    {name: 'John', age: 20, grade: 'A'},
+    {name: 'Jane', age: 22, grade: 'B'},
+    {name: 'Jim', age: 21, grade: 'C'}
+]
+console.log('Students:',students[0]);
+
+let student = students.find((s) => {
+    /*if(s.name === 'Jim'){
+        return true;
+    } else {
+        return false;
+    }
+    */
+   return s.name === 'Jane';
+})
+
+let dubblescoreStudents = students.map((s) => {
+    s.age = s.age * 2;
+    return s;
+});
+
+let highGradeStudents = students.filter((s) => {
+    return s.grade === 'A';
+});
+
+console.log('Student ',student);
+console.log('Dubble Score Students:',dubblescoreStudents);
+console.log('High Grade Students:',highGradeStudents);
+
