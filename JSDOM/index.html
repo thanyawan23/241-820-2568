@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <input type="radio" name="gender" value="male" onchange="changeGender()" checked> Male
+    <input type="radio" name="gender" value="female" onchange="changeGender()"> Female
+
+    <script>
+        /*<script>
+        let inputDOM = document.getElementsByClassName("input");    // ดึง element ที่มี class ชื่อ input มาเก็บไว้ในตัวแปร inputDOM
+        console.log(inputDOM);
+        for(let i=0; i<inputDOM.length; i++){
+            console.log(inputDOM[i].value);   
+        }/*
+
+        /*
+
+        /*let fname = document.querySelector("input[name='fname']");
+        console.log(fname.value);
+        */
+
+         /*function userClicker() {
+
+            alert("You clicked the button!");
+        }
+        function divClicker() {
+
+            alert("You clicked the div!");
+        }*/
+        function changeGender() {
+            let gendersInput = document.querySelectorAll('input[name="gender"]');
+            
+            for (let i = 0; i < gendersInput.length; i++) {
+                if (gendersInput[i].checked) {
+                    console.log("Gender selected: " + gendersInput[i].value);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
