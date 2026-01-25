@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600&display=swap');
+
+:root {
+    --primary-brown: #6F4E37;    
+    --soft-brown: #A67B5B;       
+    --beige: #ECB176;            
+    --light-bg: #FED8B1;         
+    --white: #ffffff;
+    --text-color: #3d2b1f;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+}
+
+/* --- พื้นหลังคลื่นเคลื่อนไหว --- */
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* ไล่สีพื้นหลัง */
+    background: linear-gradient(315deg, #e9d5ca 3%, #d2b48c 38%, #f5ebe0 68%, #edc9af 98%);
+    background-size: 400% 400%;
+    animation: gradientWave 15s ease infinite;
+    position: relative;
+    overflow-x: hidden;
+}
+
+@keyframes gradientWave {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+/* --- หัวข้อขยับ (Floating Animation) --- */
+.header {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--primary-brown);
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    /* ใส่ Animation */
+    animation: floatTitle 3s ease-in-out infinite;
+}
+
+@keyframes floatTitle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* --- ตกแต่ง Container --- */
+.container {
+    background-color: rgba(255, 255, 255, 0.9); /* ขาวแบบโปร่งแสงเล็กน้อย */
+    backdrop-filter: blur(10px); /* เอฟเฟกต์กระจกฝ้า */
+    padding: 2.5rem;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 450px;
+    z-index: 1;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.form-input {
+    margin-bottom: 1.2rem;
+}
+
+.header-form {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: var(--soft-brown);
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid #eee;
+    border-radius: 12px;
+    font-size: 1rem;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--soft-brown);
+    box-shadow: 0 0 0 4px rgba(166, 123, 91, 0.1);
+    outline: none;
+}
+
+/* ปรับแต่งส่วน Checkbox / Radio */
+.flex {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+    flex-wrap: wrap;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    accent-color: var(--primary-brown);
