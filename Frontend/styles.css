@@ -1,3 +1,4 @@
+/* 1. นำเข้าฟอนต์ */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600&display=swap');
 
 :root {
@@ -14,14 +15,13 @@
     font-family: 'IBM Plex Sans Thai', sans-serif;
 }
 
-/* --- พื้นหลังคลื่นเคลื่อนไหว --- */
+/* 2. พื้นหลังคลื่นเคลื่อนไหว */
 body {
     margin: 0;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* ไล่สีพื้นหลัง */
     background: linear-gradient(315deg, #e9d5ca 3%, #d2b48c 38%, #f5ebe0 68%, #edc9af 98%);
     background-size: 400% 400%;
     animation: gradientWave 15s ease infinite;
@@ -35,17 +35,13 @@ body {
     100% { background-position: 0% 0%; }
 }
 
-/* --- หัวข้อขยับ (Floating Animation) --- */
+/* 3. หัวข้อขยับ (Floating Title) */
 .header {
     font-size: 2rem;
     font-weight: 600;
     color: var(--primary-brown);
     text-align: center;
     margin-bottom: 2rem;
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    /* ใส่ Animation */
     animation: floatTitle 3s ease-in-out infinite;
 }
 
@@ -54,10 +50,10 @@ body {
     50% { transform: translateY(-10px); }
 }
 
-/* --- ตกแต่ง Container --- */
+/* 4. กล่องฟอร์ม */
 .container {
-    background-color: rgba(255, 255, 255, 0.9); /* ขาวแบบโปร่งแสงเล็กน้อย */
-    backdrop-filter: blur(10px); /* เอฟเฟกต์กระจกฝ้า */
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
     padding: 2.5rem;
     border-radius: 24px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
@@ -78,6 +74,7 @@ body {
     color: var(--soft-brown);
 }
 
+/* 5. ช่องกรอกข้อมูล */
 input[type="text"],
 input[type="number"],
 textarea {
@@ -88,21 +85,60 @@ textarea {
     font-size: 1rem;
     background: white;
     transition: all 0.3s ease;
+    outline: none;
 }
 
 input:focus, textarea:focus {
     border-color: var(--soft-brown);
     box-shadow: 0 0 0 4px rgba(166, 123, 91, 0.1);
-    outline: none;
 }
 
-/* ปรับแต่งส่วน Checkbox / Radio */
+textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+/* 6. ส่วน Checkbox และ Radio */
 .flex {
     display: flex;
     gap: 15px;
     margin-top: 5px;
     flex-wrap: wrap;
+    align-items: center;
 }
 
-input[type="radio"], input[type="checkbox"] {
+input[type="radio"], 
+input[type="checkbox"] {
     accent-color: var(--primary-brown);
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+/* 7. ปุ่มส่งข้อมูล */
+.button {
+    background-color: var(--primary-brown);
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    margin-top: 10px;
+}
+
+.button:hover {
+    background-color: var(--soft-brown);
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(111, 78, 55, 0.2);
+}
+
+.button:active {
+    transform: scale(0.98);
+}
+
+.center {
+    text-align: center;
+}
