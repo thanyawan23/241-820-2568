@@ -1,0 +1,46 @@
+//ล้างจอ
+clear
+
+//Show all container (default shows just running)
+docker ps --all
+
+//Show just running continers
+docker ps
+
+//pull an image from a registry
+docker pull <image_name>
+
+docker run hello-world
+
+//stop containers
+docker stop <container_id>
+
+//create a container feom an image
+docker create <image_name>
+
+//start a containers
+docker start <container_id>
+
+//remove a containers
+docker rm <container_id>
+
+//remove all containers
+docker system prune
+
+//nginx server
+docker run nginx
+
+//sh container
+docker run -it <image_name or container_id>
+
+//cat file inside container
+cat filename.txt
+
+//docker run
+docker run -p 80:80 nginx
+
+foreground mode
+docker run -p 9000:80 nginx
+
+//detached mode
+docker run -d 9100:80 nginxd
