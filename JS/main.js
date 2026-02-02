@@ -169,4 +169,3 @@ let highGradeStudents = students.filter((s) => {
 console.log('Student ',student);
 console.log('Dubble Score Students:',dubblescoreStudents);
 console.log('High Grade Students:',highGradeStudents);
-

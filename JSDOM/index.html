@@ -5,42 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
-    
-    <input type="radio" name="gender" value="male" onchange="changeGender()" checked> Male
-    <input type="radio" name="gender" value="female" onchange="changeGender()"> Female
-
+<div></div>
+<body>
+    <h1>งานอดิเรก</h1>
+    <div id="content"></div>
+    <!-- สร้าง checkbox สำหรับงานอดิเรก 
+     <u1>
+        <li>อ่านหนังสือ</li>
+        <li>ว่ายน้ำ</li>
+        <li>เล่นเกม</li>
+     </u1>
+    -->
+    <input type="checkbox" name="hobby" value="reading"> อ่านหนังสือ
+    <input type="checkbox" name="hobby" value="swimming"> ว่ายน้ำ
+    <input type="checkbox" name="hobby" value="gaming"> เล่นเกม
+    <button onclick="SubmitHobby()">Submit</button>
     <script>
-        /*<script>
-        let inputDOM = document.getElementsByClassName("input");    // ดึง element ที่มี class ชื่อ input มาเก็บไว้ในตัวแปร inputDOM
-        console.log(inputDOM);
-        for(let i=0; i<inputDOM.length; i++){
-            console.log(inputDOM[i].value);   
-        }/*
-
-        /*
-
-        /*let fname = document.querySelector("input[name='fname']");
-        console.log(fname.value);
-        */
-
-         /*function userClicker() {
-
-            alert("You clicked the button!");
-        }
-        function divClicker() {
-
-            alert("You clicked the div!");
-        }*/
-        function changeGender() {
-            let gendersInput = document.querySelectorAll('input[name="gender"]');
-            
-            for (let i = 0; i < gendersInput.length; i++) {
-                if (gendersInput[i].checked) {
-                    console.log("Gender selected: " + gendersInput[i].value);
+        function SubmitHobby() {
+            //เลือก ไป checkbox ที่มี name เป็น hobby ทั้งหมด
+            let hobbies = document.querySelectorAll("input[name='hobby']");
+            let consoleHTML = "<ul>";
+            //เอาค่าที่เลือก ออกมา
+            for (let i = 0; i < hobbies.length; i++) {
+                if(hobbies[i].checked) {
+                    consoleHTML += "<li>" + hobbies[i].value + "</li>";
                 }
             }
+            //วนค่าที่เลือก มาแสดงในรูปแบบ u1 li ใส่ html
+            consoleHTML += "</ul>";
+
+            //ใส่ html ใน div id content
+            let contentDiv = document.getElementById("content");
+            contentDiv.innerHTML = consoleHTML;
         }
     </script>
 </body>
