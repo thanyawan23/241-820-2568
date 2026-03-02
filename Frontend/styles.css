@@ -114,6 +114,43 @@ input[type="checkbox"] {
     transform: scale(1.1);
 }
 
+.message {
+    margin-top: 15px;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+/* Success */
+.message.success {
+    height: auto;
+    padding: 10px;
+    background-color: #d4edda;
+    border-left: 4px solid #28a745;
+    color: #155724;
+}
+
+/* Error */
+.message.error {
+    height: auto;
+    padding: 10px;
+    background-color: #f8d7da;
+    border-left: 4px solid #dc3545;
+    color: #721c24;
+}
+
+/* Danger */
+.message.danger {
+    height: auto;
+    padding: 10px;
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+    color: #856404;
+}
+
 /* 7. ปุ่มส่งข้อมูล */
 .button {
     background-color: var(--primary-brown);
